@@ -13,6 +13,12 @@
         android:theme="@style/Theme.PremierLeagueFixtures"
         tools:targetApi="31">
         <activity
+            android:name=".ChildActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/child_title"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

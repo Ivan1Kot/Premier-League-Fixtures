@@ -1,46 +1,30 @@
 package com.ivankot.premierleaguefixtures
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.ivankot.premierleaguefixtures.ui.theme.PremierLeagueFixturesTheme
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            PremierLeagueFixturesTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.mainactivitylayout);
+
+        val button: Button = findViewById(R.id.button2)
+        button.setOnClickListener {
+            val intent = Intent(
+                this,
+                ChildActivity::class.java
+            )
+            getContent.launch(intent)
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    private val getContent =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+        {
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PremierLeagueFixturesTheme {
-        Greeting("Android")
-    }
+        }
 }
