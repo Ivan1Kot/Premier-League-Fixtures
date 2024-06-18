@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@drawable/ic_launcher_background" />
-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
-    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
+    <background android:drawable="@drawable/base_color" />
+    <foreground><inset android:drawable="@drawable/_873126_field_football_game_soccer_sport_icon"
+        android:inset="25%"/> </foreground>
+    <monochrome android:drawable="@drawable/_873126_field_football_game_soccer_sport_icon"/>
 </adaptive-icon>
